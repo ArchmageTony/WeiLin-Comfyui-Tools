@@ -314,13 +314,6 @@ waitForApp((app) => {
         // ========================================
         const fixCurrentNodeDomWidgets = () => {
           if (!this.widgets) return;
-          // 三种 WeiLin 节点统一保留 Comfy 原生缩放链，
-          // 避免小画布/缩放时 dom-widget 与 canvas widget 叠层错位。
-          if (
-            nodeData.name === "WeiLinPromptUI" ||
-            nodeData.name === "WeiLinPromptUIWithoutLora" ||
-            nodeData.name === "WeiLinPromptUIOnlyLoraStack"
-          ) return;
           const processedDomWidgets = new Set();
           
           this.widgets.forEach(widget => {
